@@ -12,5 +12,7 @@ namespace homeBanking
         public string accountOwner;
         public int money;
         public string cbu;
+
+        public int cents;
     }
 }
