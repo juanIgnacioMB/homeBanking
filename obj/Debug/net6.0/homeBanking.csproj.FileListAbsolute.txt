@@ -1,0 +1,15 @@
+C:\Users\Nacho\Desktop\c#\homeBanking\bin\Debug\net6.0\homeBanking.exe
+C:\Users\Nacho\Desktop\c#\homeBanking\bin\Debug\net6.0\homeBanking.deps.json
+C:\Users\Nacho\Desktop\c#\homeBanking\bin\Debug\net6.0\homeBanking.runtimeconfig.json
+C:\Users\Nacho\Desktop\c#\homeBanking\bin\Debug\net6.0\homeBanking.dll
+C:\Users\Nacho\Desktop\c#\homeBanking\bin\Debug\net6.0\homeBanking.pdb
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.csproj.AssemblyReference.cache
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.AssemblyInfoInputs.cache
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.AssemblyInfo.cs
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.dll
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\refint\homeBanking.dll
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.pdb
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\homeBanking.genruntimeconfig.cache
+C:\Users\Nacho\Desktop\c#\homeBanking\obj\Debug\net6.0\ref\homeBanking.dll
