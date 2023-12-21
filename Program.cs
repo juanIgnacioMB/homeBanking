@@ -16,7 +16,6 @@ namespace Homebanking
 
            
 
-
             while (choice <= 0 || choice >= 4)
             {
                 Console.WriteLine("invalid option, please try again\n");

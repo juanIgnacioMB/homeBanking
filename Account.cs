@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,5 +15,19 @@ namespace homeBanking
         public string cbu;
 
         public int cents;
+
+        public Account(string AccountNumber, string AccontOwner)
+        {
+            accountNumber = AccountNumber;
+            accountOwner = AccontOwner;
+            money = 100;
+
+            createCBU();
+        }
+
+        public string createCBU()
+        {
+            return "aa";
+        }
     }
 }
