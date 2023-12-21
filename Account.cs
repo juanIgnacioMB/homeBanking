@@ -27,7 +27,16 @@ namespace homeBanking
 
         public string createCBU()
         {
-            return "aa";
+            string cbu = "";
+            int digit;
+            for(int i = 0; i < 22; i++)
+            {
+                digit = new Random().Next(0, 9);
+                Convert.ToString(digit);
+                cbu += digit;
+            }
+            Console.WriteLine(cbu);
+            return cbu;
         }
     }
 }

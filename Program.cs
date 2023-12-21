@@ -1,11 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using homeBanking;
+
 namespace Homebanking
 {
      class Program
     {
         public static void Main()
         {
+            Account acc1 = new Account("nacho","123456");
 
             Console.WriteLine("Select an option with a number");
             Console.WriteLine("1 - Enter account\n" +

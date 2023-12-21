@@ -8,11 +8,13 @@ namespace homeBanking
 {
     internal class AccountManager
     {
-        Account[] accounts;
+        List<Account> accountsList = new List<Account>();
 
-        public void createAccount()
+        public void createAccount(string AccountNumber, string AccontOwner)
         {
+            Account NAccount = new Account(AccountNumber, AccontOwner);
 
+            accountsList.Add(NAccount);
         }
     }
 }
