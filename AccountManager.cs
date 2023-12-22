@@ -10,11 +10,12 @@ namespace homeBanking
     {
         List<Account> accountsList = new List<Account>();
 
-        public void createAccount(string AccountNumber, string AccontOwner)
+        public void createAccount(string AccountNumber, string AccontOwner, int Money)
         {
-            Account NAccount = new Account(AccountNumber, AccontOwner);
+            Account NAccount = new Account(AccountNumber, AccontOwner, Money);
 
             accountsList.Add(NAccount);
+            Console.WriteLine("Account created with succes!");
         }
     }
 }

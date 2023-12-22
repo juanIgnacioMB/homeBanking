@@ -16,11 +16,11 @@ namespace homeBanking
 
         public int cents;
 
-        public Account(string AccountNumber, string AccontOwner)
+        public Account(string AccountNumber, string AccontOwner, int Money)
         {
             accountNumber = AccountNumber;
             accountOwner = AccontOwner;
-            money = 100;
+            money = Money;
 
             createCBU();
         }
