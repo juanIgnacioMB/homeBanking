@@ -35,7 +35,7 @@ namespace homeBanking
                 Convert.ToString(digit);
                 cbu += digit;
             }
-            Console.WriteLine(cbu);
+           
             return cbu;
         }
     }
