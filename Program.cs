@@ -34,7 +34,8 @@ namespace Homebanking
 
                     Console.WriteLine("1 - Enter account\n" +
                                       "2 - Create account\n" +
-                                      "3 - Delete account\n");
+                                      "3 - Delete account\n" + 
+                                      "4 - End\n");
                     choice = Convert.ToInt32(Console.ReadLine());
                 }
 
@@ -46,8 +47,9 @@ namespace Homebanking
                 switch (choice)
                 {
                     case 1:
-
-                        Console.WriteLine("Choice 1");
+                        Console.WriteLine("Enter account`s number");
+                        string number = Console.ReadLine();
+                        bank.operateInAccount(number);
 
                         break;
                     case 2:
@@ -60,7 +62,7 @@ namespace Homebanking
                         Console.WriteLine("\nEnter money");
                         int money = Convert.ToInt32(Console.ReadLine());
 
-                        bank.createAccount(name, accountNumber, money);
+                        bank.createAccount(accountNumber, name, money);
                         break;
                     case 3:
                         Console.WriteLine("Choice 3");

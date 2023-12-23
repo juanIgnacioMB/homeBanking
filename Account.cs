@@ -9,12 +9,37 @@ namespace homeBanking
 {
     internal class Account
     {
-        public string accountNumber;
-        public string accountOwner;
-        public int money;
-        public string cbu;
+        private string accountNumber;
+        private string accountOwner;
+        private int money;
+        private string cbu;
 
         public int cents;
+
+
+        public string AccountNumber
+        {
+            get { return accountNumber; }
+            //set { accountNumber = value; }  
+        }
+
+        public string AccountOwner
+        {
+            get { return accountOwner; }
+            //set { accountNumber = value; }  
+        }
+
+        public int Money
+        {
+            get { return money; }
+            //set { accountNumber = value; }  
+        }
+
+        public string CBU
+        {
+            get { return cbu; }
+            //set { accountNumber = value; }  
+        }
 
         public Account(string AccountNumber, string AccontOwner, int Money)
         {
