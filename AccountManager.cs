@@ -10,30 +10,61 @@ namespace homeBanking
     {
         List<Account> accountsList = new List<Account>();
 
+
+
+        public bool DoesTheAccountExist(string accountNumber)
+        {
+
+            for (int i = 0; i < accountsList.Count; i++)
+            {
+                if (accountNumber.Equals(accountsList[i].AccountNumber))
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+
         public void createAccount(string AccountNumber, string AccontOwner, int Money)
         {
-            Account NAccount = new Account(AccountNumber, AccontOwner, Money);
+            if (!DoesTheAccountExist(AccountNumber))
+            {
+                Account NAccount = new Account(AccountNumber, AccontOwner, Money);
 
-            accountsList.Add(NAccount);
-            Console.WriteLine("Account created successfully!\n");
+                accountsList.Add(NAccount);
+                Console.WriteLine("Account created successfully!\n");
+            }
+            else
+            {
+                Console.WriteLine("The account already exists, please try another number");
+            }
+            
         }
 
         public void operateInAccount(string accountNumber)
         {
-             
+            int counter = 0;    
              
             for (int i = 0; i < accountsList.Count; i++)
             {
-                //Console.WriteLine(accountsList.Count);
+               
                 if (accountsList[i].AccountNumber.Equals(accountNumber))
                 {
                     Console.WriteLine("I find the account " + accountsList[i].AccountNumber);
                 }
                 else
                 {
-                    Console.WriteLine("I DIDN`T find the account " + accountsList[i].AccountNumber);
+                    counter++;
                 }
             }
+
+            if (counter == accountsList.Count){
+                Console.WriteLine("Can`t find the account, check the number please");
+            }
         }
+
+       
     }
 }
