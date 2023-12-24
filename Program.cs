@@ -13,8 +13,6 @@ namespace Homebanking
 
            
 
-
-
             while (flag != 1)
             {
 
@@ -24,61 +22,50 @@ namespace Homebanking
                                  "3 - Delete account\n" +
                                  "4 - End");
 
-                int choice = Convert.ToInt32(Console.ReadLine());
+                string choice = Console.ReadLine();
+                int choiseInt;
 
-
-
-                while (choice <= 0 || choice >= 5)
+                if (!(Int32.TryParse(choice, out choiseInt)) || choiseInt <= 0 || choiseInt >= 5)
                 {
                     Console.WriteLine("invalid option, please try again\n");
-
-                    Console.WriteLine("1 - Enter account\n" +
-                                      "2 - Create account\n" +
-                                      "3 - Delete account\n" + 
-                                      "4 - End\n");
-                    choice = Convert.ToInt32(Console.ReadLine());
                 }
-
-
-                /*----------------------------------*/
-
-
-
-                switch (choice)
+                else
                 {
-                    case 1:
-                        Console.WriteLine("Enter account`s number");
-                        string number = Console.ReadLine();
-                        bank.operateInAccount(number);
+                    switch (choiseInt)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter account`s number");
+                            string number = Console.ReadLine();
+                            bank.operateInAccount(number);
 
-                        break;
-                    case 2:
-                        Console.WriteLine("Enter account owner`s name");
-                        string name = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter account owner`s name");
+                            string name = Console.ReadLine();
 
-                        Console.WriteLine("\nEnter account number");
-                        string accountNumber = Console.ReadLine();
+                            Console.WriteLine("\nEnter account number");
+                            string accountNumber = Console.ReadLine();
 
-                        Console.WriteLine("\nEnter money");
-                        int money = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\nEnter money");
+                            int money = Convert.ToInt32(Console.ReadLine());
 
-                        bank.createAccount(accountNumber, name, money);
-                        break;
-                    case 3:
-                        Console.WriteLine("Choice 3");
-                        break;
-                    case 4:
-                        flag = 1;
-                        break;
+                            bank.createAccount(accountNumber, name, money);
+                            break;
+                        case 3:
+                            Console.WriteLine("Choice 3");
+                            break;
+                        case 4:
+                            flag = 1;
+                            break;
+
+                    }
+
 
                 }
 
 
             }
                 
-
-
-
 
         }
 

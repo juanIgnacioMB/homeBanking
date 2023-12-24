@@ -62,11 +62,12 @@ namespace homeBanking
                             "3 - Delete account\n" +
                             "4 - Exit");
 
-                        int select = Convert.ToInt32(Console.ReadLine());
+                        string sel = Console.ReadLine();
+                        int select;
 
                         
 
-                        if(select > 4 || select < 0)
+                        if(!(Int32.TryParse(sel, out select)) ||select > 4 || select < 0)
                         {
                             Console.WriteLine("Invalid, please choose a valid option");
                         }
