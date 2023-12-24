@@ -47,7 +47,7 @@ namespace homeBanking
             accountOwner = AccontOwner;
             money = Money;
 
-            createCBU();
+            cbu = createCBU();
         }
 
         public string createCBU()

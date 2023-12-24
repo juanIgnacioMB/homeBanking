@@ -45,14 +45,53 @@ namespace homeBanking
 
         public void operateInAccount(string accountNumber)
         {
-            int counter = 0;    
-             
+            int counter = 0;
+            int flag = 0;
             for (int i = 0; i < accountsList.Count; i++)
             {
                
                 if (accountsList[i].AccountNumber.Equals(accountNumber))
                 {
-                    Console.WriteLine("I find the account " + accountsList[i].AccountNumber);
+
+                    while (flag == 0)
+                    {
+                        Console.WriteLine("Select an operation with a number");
+
+                        Console.WriteLine("\n1 - transfer\n" +
+                            "2 - Show account's data\n" +
+                            "3 - Delete account\n" +
+                            "4 - Exit");
+
+                        int select = Convert.ToInt32(Console.ReadLine());
+
+                        
+
+                        if(select > 4 || select < 0)
+                        {
+                            Console.WriteLine("Invalid, please choose a valid option");
+                        }
+                        else
+                        {
+                            switch (select)
+                            {
+                                case 1:
+                                    Console.WriteLine("Transfer");
+                                    break;
+                                case 2:
+                                    Console.WriteLine("\nAccount owner: " + accountsList[i].AccountOwner+ 
+                                        " \nnumber: "+ accountsList[i].AccountNumber +
+                                        " \navailable founds: " + accountsList[i].Money + 
+                                        " \nCBU: " + accountsList[i].CBU);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Account Deleted");
+                                    break;
+                                case 4:
+                                    flag = 1;
+                                    break;
+                            }
+                        }
+                    }
                 }
                 else
                 {
