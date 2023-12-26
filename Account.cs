@@ -20,25 +20,25 @@ namespace homeBanking
         public string AccountNumber
         {
             get { return accountNumber; }
-            //set { accountNumber = value; }  
+            
         }
 
         public string AccountOwner
         {
             get { return accountOwner; }
-            //set { accountNumber = value; }  
+             
         }
 
         public int Money
         {
             get { return money; }
-            //set { accountNumber = value; }  
+              
         }
 
         public string CBU
         {
             get { return cbu; }
-            //set { accountNumber = value; }  
+              
         }
 
         public Account(string AccountNumber, string AccontOwner, int Money)
@@ -62,6 +62,14 @@ namespace homeBanking
             }
            
             return cbu;
+        }
+
+        public void showInformation()
+        {
+            Console.WriteLine("\nAccount owner: " + accountOwner +
+                                        " \nnumber: "+ accountNumber +
+                                        " \navailable founds: " + money +
+                                        " \nCBU: " + cbu);
         }
     }
 }

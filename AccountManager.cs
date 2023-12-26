@@ -27,20 +27,31 @@ namespace homeBanking
         }
 
 
-        public void createAccount(string AccountNumber, string AccontOwner, int Money)
+        public void createAccount()
         {
-            if (!DoesTheAccountExist(AccountNumber))
-            {
-                Account NAccount = new Account(AccountNumber, AccontOwner, Money);
 
-                accountsList.Add(NAccount);
-                Console.WriteLine("Account created successfully!\n");
-            }
-            else
+            Console.WriteLine("Enter account owner`s name");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("\nEnter account number");
+            string accountNumber = Console.ReadLine();
+
+            Console.WriteLine("\nEnter money");
+            int money = Convert.ToInt32(Console.ReadLine());
             {
-                Console.WriteLine("The account already exists, please try another number");
+                if (!DoesTheAccountExist(accountNumber))
+                {
+                    Account NAccount = new Account(accountNumber, name, money);
+
+                    accountsList.Add(NAccount);
+                    Console.WriteLine("Account created successfully!\n");
+                }
+                else
+                {
+                    Console.WriteLine("The account already exists, please try another number");
+                }
+
             }
-            
         }
 
         public void operateInAccount(string accountNumber)
@@ -58,7 +69,7 @@ namespace homeBanking
                         Console.WriteLine("Select an operation with a number");
 
                         Console.WriteLine("\n1 - transfer\n" +
-                            "2 - Show account's data\n" +
+                            "2 - Show account's information\n" +
                             "3 - Delete account\n" +
                             "4 - Exit");
 
@@ -79,10 +90,7 @@ namespace homeBanking
                                     Console.WriteLine("Transfer");
                                     break;
                                 case 2:
-                                    Console.WriteLine("\nAccount owner: " + accountsList[i].AccountOwner+ 
-                                        " \nnumber: "+ accountsList[i].AccountNumber +
-                                        " \navailable founds: " + accountsList[i].Money + 
-                                        " \nCBU: " + accountsList[i].CBU);
+                                    accountsList[i].showInformation();
                                     break;
                                 case 3:
                                     Console.WriteLine("Account Deleted");
@@ -106,5 +114,12 @@ namespace homeBanking
         }
 
        
+
     }
+
+
+
+    
 }
+
+

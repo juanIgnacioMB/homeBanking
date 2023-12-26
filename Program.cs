@@ -40,16 +40,8 @@ namespace Homebanking
 
                             break;
                         case 2:
-                            Console.WriteLine("Enter account owner`s name");
-                            string name = Console.ReadLine();
-
-                            Console.WriteLine("\nEnter account number");
-                            string accountNumber = Console.ReadLine();
-
-                            Console.WriteLine("\nEnter money");
-                            int money = Convert.ToInt32(Console.ReadLine());
-
-                            bank.createAccount(accountNumber, name, money);
+                       
+                            bank.createAccount();
                             break;
                         case 3:
                             Console.WriteLine("Choice 3");
