@@ -63,6 +63,7 @@ namespace homeBanking
                
                 if (accountsList[i].AccountNumber.Equals(accountNumber))
                 {
+                    Account selectAccount = accountsList[i];
 
                     while (flag == 0)
                     {
@@ -88,7 +89,8 @@ namespace homeBanking
                             {
                                 case 1:
 
-                                    Transfer(accountsList[i].AccountNumber);
+                                    Transfer(selectAccount);
+                            
                                     break;
                                 case 2:
                                     accountsList[i].showInformation();
@@ -115,7 +117,7 @@ namespace homeBanking
         }
 
 
-        public void Transfer(string accountThatTransfer)
+        public void Transfer(Account selectAccount)
         {
 
             int count = 0;
@@ -125,29 +127,38 @@ namespace homeBanking
             Console.WriteLine("To what account? enter account's number");
             string account = Console.ReadLine();
 
-            for(int i =0; i < accountsList.Count(); i++)
+            if(selectAccount.Money >= transferMoney)
             {
-                if (!(account.Equals(accountsList[i].AccountNumber)))
+            
+                for (int i = 0; i < accountsList.Count(); i++)
                 {
-                    accountsList[i].Money = accountsList[i].Money + transferMoney;
-                    count++;
+                    if (account.Equals(accountsList[i].AccountNumber))
+                    {
+                        accountsList[i].Money = accountsList[i].Money + transferMoney;
+
+                        selectAccount.Money = selectAccount.Money - transferMoney;
+                        Console.WriteLine("Successfully transferred");
+                    }
+                    else
+                    {
+                        count++;
+                    }
+
 
                 }
-                else if (!(accountThatTransfer.Equals(accountsList[i].AccountNumber)))
-                {
-                    accountsList[i].Money = accountsList[i].Money - transferMoney;
-                    count++;
-                }
-                else
-                {
-                    count++;
-                }
             }
+            else
+            {
+                Console.WriteLine("Error! not enough found to tarnsfer");
+            }
+
+            
 
             if(count == accountsList.Count())
             {
                 Console.WriteLine("Account not found");
             }
+           
 
 
         }
