@@ -11,8 +11,6 @@ namespace Homebanking
             int flag = 0;
             AccountManager bank = new AccountManager();
 
-           
-
             while (flag != 1)
             {
 

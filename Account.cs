@@ -32,6 +32,7 @@ namespace homeBanking
         public int Money
         {
             get { return money; }
+            set { money = value; }
               
         }
 

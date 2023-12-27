@@ -87,7 +87,8 @@ namespace homeBanking
                             switch (select)
                             {
                                 case 1:
-                                    Console.WriteLine("Transfer");
+
+                                    Transfer(accountsList[i].AccountNumber);
                                     break;
                                 case 2:
                                     accountsList[i].showInformation();
@@ -113,13 +114,45 @@ namespace homeBanking
             }
         }
 
-       
 
+        public void Transfer(string accountThatTransfer)
+        {
+
+            int count = 0;
+            Console.WriteLine("Enter amount");
+            int transferMoney = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("To what account? enter account's number");
+            string account = Console.ReadLine();
+
+            for(int i =0; i < accountsList.Count(); i++)
+            {
+                if (!(account.Equals(accountsList[i].AccountNumber)))
+                {
+                    accountsList[i].Money = accountsList[i].Money + transferMoney;
+                    count++;
+
+                }
+                else if (!(accountThatTransfer.Equals(accountsList[i].AccountNumber)))
+                {
+                    accountsList[i].Money = accountsList[i].Money - transferMoney;
+                    count++;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+
+            if(count == accountsList.Count())
+            {
+                Console.WriteLine("Account not found");
+            }
+
+
+        }
     }
 
-
-
-    
 }
 
 
