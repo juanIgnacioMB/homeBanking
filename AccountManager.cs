@@ -88,9 +88,7 @@ namespace homeBanking
                             switch (select)
                             {
                                 case 1:
-
                                     Transfer(selectAccount);
-                            
                                     break;
                                 case 2:
                                     accountsList[i].showInformation();
@@ -117,49 +115,59 @@ namespace homeBanking
         }
 
 
+
         public void Transfer(Account selectAccount)
         {
 
             int count = 0;
-            Console.WriteLine("Enter amount");
-            int transferMoney = Convert.ToInt32(Console.ReadLine());
+           
 
             Console.WriteLine("To what account? enter account's number");
             string account = Console.ReadLine();
 
-            if(selectAccount.Money >= transferMoney)
+            Console.WriteLine("Enter amount");
+            string transferMoneyS = Console.ReadLine();
+            int transferMoney;
+
+
+            if ((Int32.TryParse(transferMoneyS, out transferMoney)))
             {
-            
-                for (int i = 0; i < accountsList.Count(); i++)
+
+                if (selectAccount.Money >= transferMoney)
                 {
-                    if (account.Equals(accountsList[i].AccountNumber))
+
+                    for (int i = 0; i < accountsList.Count(); i++)
                     {
-                        accountsList[i].Money = accountsList[i].Money + transferMoney;
+                        if (account.Equals(accountsList[i].AccountNumber))
+                        {
+                            accountsList[i].Money = accountsList[i].Money + transferMoney;
 
-                        selectAccount.Money = selectAccount.Money - transferMoney;
-                        Console.WriteLine("Successfully transferred");
+                            selectAccount.Money = selectAccount.Money - transferMoney;
+                            Console.WriteLine("Successfully transferred");
+                        }
+                        else
+                        {
+                            count++;
+                        }
                     }
-                    else
-                    {
-                        count++;
-                    }
-
-
                 }
+                else
+                {
+                    Console.WriteLine("Error! not enough found to tarnsfer");
+                }
+
+                if (count == accountsList.Count())
+                {
+                    Console.WriteLine("Account not found");
+                }
+               
             }
+
             else
             {
-                Console.WriteLine("Error! not enough found to tarnsfer");
+                Console.WriteLine("Error! try again");
             }
-
             
-
-            if(count == accountsList.Count())
-            {
-                Console.WriteLine("Account not found");
-            }
-           
-
 
         }
     }
