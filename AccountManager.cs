@@ -11,7 +11,6 @@ namespace homeBanking
         List<Account> accountsList = new List<Account>();
 
 
-
         public bool DoesTheAccountExist(string accountNumber)
         {
 
@@ -94,7 +93,9 @@ namespace homeBanking
                                     accountsList[i].showInformation();
                                     break;
                                 case 3:
+                                    accountsList.RemoveAt(i);
                                     Console.WriteLine("Account Deleted");
+                                    flag = 1;
                                     break;
                                 case 4:
                                     flag = 1;
@@ -153,7 +154,7 @@ namespace homeBanking
                 }
                 else
                 {
-                    Console.WriteLine("Error! not enough found to tarnsfer");
+                    Console.WriteLine("Error! not enough founds to transfer");
                 }
 
                 if (count == accountsList.Count())
@@ -170,6 +171,13 @@ namespace homeBanking
             
 
         }
+
+
+
+       /* public void Delete()
+        {
+
+        }*/
     }
 
 }

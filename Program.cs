@@ -17,8 +17,7 @@ namespace Homebanking
                 Console.WriteLine("Select an option with a number");
                 Console.WriteLine("1 - Enter account\n" +
                                  "2 - Create account\n" +
-                                 "3 - Delete account\n" +
-                                 "4 - End");
+                                 "3 - End");
 
                 string choice = Console.ReadLine();
                 int choiseInt;
@@ -42,9 +41,6 @@ namespace Homebanking
                             bank.createAccount();
                             break;
                         case 3:
-                            Console.WriteLine("Choice 3");
-                            break;
-                        case 4:
                             flag = 1;
                             break;
 
