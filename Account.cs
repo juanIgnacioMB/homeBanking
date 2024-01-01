@@ -14,7 +14,7 @@ namespace homeBanking
         private int money;
         private string cbu;
 
-        public int cents;
+        private List<string> transactionHistory;
 
 
         public string AccountNumber
@@ -49,6 +49,7 @@ namespace homeBanking
             money = Money;
 
             cbu = createCBU();
+            transactionHistory = new List<string>();
         }
 
         public string createCBU()
@@ -73,7 +74,26 @@ namespace homeBanking
                                         " \nCBU: " + cbu);
         }
     
-    
+        public void modifyHistory(string instruction, int amount, string account)
+        {
+            if (instruction.Equals("transfer"))
+            {
+                transactionHistory.Add(amount + " tranferded to account " + account);
+            }
+            else
+            {
+                transactionHistory.Add(amount + " recibed from account " + account);
+            }
+        }
+
+        public void showHistory()
+        {
+            for(int i = 0; i < transactionHistory.Count; i++)
+            {
+                Console.WriteLine(transactionHistory[i]);
+            }
+            
+        }
          
     
     }

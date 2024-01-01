@@ -71,14 +71,14 @@ namespace homeBanking
                         Console.WriteLine("\n1 - transfer\n" +
                             "2 - Show account's information\n" +
                             "3 - Delete account\n" +
-                            "4 - Exit");
+                            "4 - Show transaction history\n"+
+                            "5 - Exit");
 
                         string sel = Console.ReadLine();
                         int select;
 
-                        
 
-                        if(!(Int32.TryParse(sel, out select)) ||select > 4 || select < 0)
+                        if(!(Int32.TryParse(sel, out select)) ||select > 5 || select < 0)
                         {
                             Console.WriteLine("Invalid, please choose a valid option");
                         }
@@ -97,7 +97,11 @@ namespace homeBanking
                                     Console.WriteLine("Account Deleted");
                                     flag = 1;
                                     break;
+
                                 case 4:
+                                    accountsList[i].showHistory();
+                                    break;
+                                case 5:
                                     flag = 1;
                                     break;
                             }
@@ -142,8 +146,10 @@ namespace homeBanking
                         if (account.Equals(accountsList[i].AccountNumber))
                         {
                             accountsList[i].Money = accountsList[i].Money + transferMoney;
+                            accountsList[i].modifyHistory("recibe", transferMoney, selectAccount.AccountNumber);
 
                             selectAccount.Money = selectAccount.Money - transferMoney;
+                            selectAccount.modifyHistory("transfer", transferMoney, accountsList[i].AccountNumber);
                             Console.WriteLine("Successfully transferred");
                         }
                         else
@@ -172,12 +178,6 @@ namespace homeBanking
 
         }
 
-
-
-       /* public void Delete()
-        {
-
-        }*/
     }
 
 }
